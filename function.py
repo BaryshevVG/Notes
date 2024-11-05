@@ -2,7 +2,7 @@ import file_operation
 import Note
 import ui
 
-number = 6 # сколько знаков МИНИМУМ может быть в тексте заметки
+number = 6 
 
 def add():
     note = ui.create_note(number)
@@ -22,7 +22,7 @@ def show():
             print(Note.Note.map_note(notes))
             print("\n")
     except Exception:
-        print('\nНет ни одной заметки...\n')
+        print('\nНет ни одной заметки\n')
 
 
 def show_date():
@@ -35,7 +35,7 @@ def show_date():
             print('\n')
             logic = False
     if logic == True:
-        print("Нет ни одной заметки...")
+        print("Нет ни одной заметки")
 
 
 def show_id():
@@ -45,7 +45,7 @@ def show_id():
         for notes in array:
             print('id: ' + Note.Note.get_id(notes))
     except Exception:
-        print('\nНет ни одной заметки...\n')
+        print('\nНет ни одной заметки\n')
     id = input("Введите id необходимой заметки: ")
     logic = True
     for notes in array:
@@ -54,7 +54,7 @@ def show_id():
             print(Note.Note.map_note(notes))
             logic = False
     if logic == True:
-        print("Заметки не найдено...")
+        print("Заметка не найдена")
 
 
 def delete():
@@ -66,10 +66,10 @@ def delete():
         if id == Note.Note.get_id(notes):
             logic = False
             array.remove(notes)
-            print("Заметка удалена...")
+            print("Заметка удалена")
             file_operation.write_file(array, 'a')
     if logic == True:
-        print('Такой заметки нет. Возможно вы ввели неверный id')
+        print('Такой заметки нет. Возможно, вы ввели неверный id')
 
 
 def edit():

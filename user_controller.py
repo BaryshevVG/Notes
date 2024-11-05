@@ -20,5 +20,5 @@ def run():
         if input_from_user == '6':
             function.show_id()
         if input_from_user == '7':
-            ui.goodbuy()
+            ui.goodbye()
             break
